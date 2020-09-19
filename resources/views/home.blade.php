@@ -13,7 +13,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
-< <>
+<body>
         <header>
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
                 <a class="navbar-brand" href="index.php">Öğrenci</a>
@@ -48,26 +48,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach($students as $student)
                                 <tr>
                                     <td>
-                                        <img src="{{ asset('img/female.jpg') }}" alt="Image" width='50' height='50'/>
+                                        <img src="{{ asset('img')}}{{'/'}}{{$student->Img}}"  class="rounded-circle" alt="Image" width='50' height='50'/>
                                     </td>
-                                    <td>Ayşe</td>
-                                    <td>Tek</td>
+                                    <td>{{$student->Name}} {{$student->Surname}} </td>
+                                    <td>{{$student->Gender}}</td>
                                     <td>
                                         <a href="#" class="btn btn-outline-primary">Düzenle</a> 
                                         <a href="#" class="btn btn-outline-danger">Edit</a></td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <img src="{{ asset('img/male.jpg') }}" alt="Image" width='50' height='50'/>
-                                    </td>
-                                    <td>Ayşe</td>
-                                    <td>Tek</td>
-                                    <td>
-                                        <a href="#" class="btn btn-outline-primary">Düzenle</a> 
-                                        <a href="#" class="btn btn-outline-danger">Edit</a></td>
-                                </tr>
+                                @endforeach
+                               
                             </tbody>
                         </table>
                     </div>
@@ -79,5 +72,5 @@
         <footer class="container">
             <p>© Company 2017-2018</p>    
         </footer>
-    </>
+    </body>
 </html>
