@@ -56,8 +56,9 @@
                                     <td>{{$student->Name}} {{$student->Surname}} </td>
                                     <td>{{$student->Gender}}</td>
                                     <td>
-                                        <a href="#" class="btn btn-outline-primary">Düzenle</a> 
-                                        <a href="#" class="btn btn-outline-danger">Edit</a></td>
+                                        <a href="edit/{{ $student->Id }}" class="btn btn-outline-primary">Düzenle</a> 
+                                        <a href="delete/{{ $student->Id }}" class="btn btn-outline-danger">Sil</a>
+                                    </td>
                                 </tr>
                                 @endforeach
                                
