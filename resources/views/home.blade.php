@@ -22,7 +22,7 @@
                     <a class="nav-link" href="index.php">Listele</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="record.php">Yeni Kayıt</a>
+                    <a class="nav-link" href="creat">Yeni Kayıt</a>
                     </li>
                 </ul>
             </nav>
@@ -54,7 +54,9 @@
                                         <img src="{{ asset('img')}}{{'/'}}{{$student->Img}}"  class="rounded-circle" alt="Image" width='50' height='50'/>
                                     </td>
                                     <td>{{$student->Name}} {{$student->Surname}} </td>
-                                    <td>{{$student->Gender}}</td>
+                                    <td> 
+                                        {{ $student->Gender==0 ? 'Kadın' : 'Erkek' }}
+                                    </td>
                                     <td>
                                         <a href="edit/{{ $student->Id }}" class="btn btn-outline-primary">Düzenle</a> 
                                         <a href="delete/{{ $student->Id }}" class="btn btn-outline-danger">Sil</a>
@@ -66,7 +68,6 @@
                         </table>
                     </div>
                 </div>
-                <hr>
             </div>
 
         </main>
