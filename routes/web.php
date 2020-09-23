@@ -32,5 +32,7 @@ Route::post('creat', [HomeController::class, 'store']);
 
 Route::get('delete/{id}',[HomeController::class, 'delete']);
 
+
 Route::get('edit/{id}',[HomeController::class, 'edit']);
 
+Route::post('update/{id}',[HomeController::class, 'update']);

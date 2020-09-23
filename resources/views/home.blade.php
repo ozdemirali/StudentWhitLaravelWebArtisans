@@ -58,6 +58,9 @@
                                         {{ $student->Gender==0 ? 'Kadın' : 'Erkek' }}
                                     </td>
                                     <td>
+                                        {{$student->className}}
+                                    </td>
+                                    <td>
                                         <a href="edit/{{ $student->Id }}" class="btn btn-outline-primary">Düzenle</a> 
                                         <a href="delete/{{ $student->Id }}" class="btn btn-outline-danger">Sil</a>
                                     </td>
