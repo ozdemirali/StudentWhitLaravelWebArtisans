@@ -7,7 +7,14 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+For Database:
+  MySQL is used.
+  
+  ![Database](https://user-images.githubusercontent.com/20681737/93391242-88e92980-f877-11ea-93f2-8be0c3a32bad.jpg)
+
+
 ## About Laravel
+
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
