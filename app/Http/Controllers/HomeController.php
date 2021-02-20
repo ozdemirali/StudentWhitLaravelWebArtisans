@@ -40,7 +40,7 @@ class HomeController extends Controller
                 'Name'=>$request->name,
                 'Surname'=>$request->surname,
                 'Gender'=>$request->gender,
-                'ClassId'=>$request->classId
+                'ClassId'=>$request->classId,
             ]);
             
             //print $student;
@@ -48,6 +48,8 @@ class HomeController extends Controller
             $file = $request->file('fileToUpload');
             $imageFileType= $file->getClientOriginalExtension();
             $uploadOk = 1;
+            $target_file=uniqid().".".$imageFileType;
+            
              
              //Control file extension
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
@@ -62,8 +64,9 @@ class HomeController extends Controller
                 $destinationPath = 'img';
               
                 if($uploadOk==1){
-                     $file->move($destinationPath,$file->getClientOriginalName());
-                     $student->img=$file->getClientOriginalName();
+                     $file->move($destinationPath,$target_file);
+                     //$student->img="$file->getClientOriginalName();
+                     $student->Img=$target_file;
                 }
                 else{
                     if($request->gender==0){
@@ -132,16 +135,16 @@ class HomeController extends Controller
                     $destinationPath = 'img';
                   
                     if($uploadOk==1){
-                         $file->move($destinationPath,$file->getClientOriginalName());
-                         $student->img=$file->getClientOriginalName();
+                         $file->move($destinationPath,$student->Img);
+                         //$student->img=$file->getClientOriginalName();
                     }
-                    else{
-                        if($request->gender==0){
-                            $student->Img="female.jpg";  
-                        }else{
-                            $student->Img="male.jpg";
-                        }
-                    }
+                    // else{
+                    //     if($request->gender==0){
+                    //         $student->Img="female.jpg";  
+                    //     }else{
+                    //         $student->Img="male.jpg";
+                    //     }
+                    // }
             }
 
             $sql = "UPDATE student SET Name='$student->Name', Surname='$student->Surname',Gender='$student->Gender',ClassId=".$student->ClassId.",Img='".$student->Img."' Where Id=".$id;
